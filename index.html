@@ -13,23 +13,50 @@
     <link rel="stylesheet" href="./src/output.css" />
 
     <script
-      src="https://kit.fontawesome.com/a2f16e9c5e.js"
+      src="https://kit.fontawesome.com/626492ee82.js"
       crossorigin="anonymous"
     ></script>
   </head>
-  <body class="bg-gray-100 text-gray-800">
-    <header class="bg-white shadow-md">
+  <body
+    class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300"
+  >
+    <header
+      class="bg-white dark:bg-gray-800 shadow-md transition-colors duration-300"
+    >
       <div
         class="container mx-auto flex items-center justify-between px-4 py-4"
       >
-        <h1 class="text-2xl font-bold text-indigo-600">MyShop</h1>
+        <h1 class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
+          MyShop
+        </h1>
         <nav>
           <ul class="flex items-center gap-6">
-            <li><a href="#" class="hover:text-indigo-600">Home</a></li>
-            <li><a href="#" class="hover:text-indigo-600">Products</a></li>
-            <li><a href="#" class="hover:text-indigo-600">Contact</a></li>
             <li>
-              <a href="#" class="relative text-xl hover:text-indigo-600">
+              <a
+                href="#"
+                class="hover:text-indigo-600 dark:hover:text-indigo-400"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-indigo-600 dark:hover:text-indigo-400"
+                >Products</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-indigo-600 dark:hover:text-indigo-400"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="relative text-xl hover:text-indigo-600 dark:hover:text-indigo-400"
+              >
                 <i class="fas fa-shopping-cart"></i>
                 <span
                   class="absolute -top-2 -right-3 bg-red-500 text-white text-xs rounded-full px-1"
@@ -37,18 +64,27 @@
                 >
               </a>
             </li>
+
+            <li>
+              <button
+                id="toggle-dark"
+                class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-xl transition-colors cursor-pointer"
+              >
+                <i id="theme-icon" class="fas fa-moon"></i>
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
 
-
     <main class="container mx-auto px-4 py-8">
       <div id="product-list" class="grid md:grid-cols-3 gap-6"></div>
 
-
       <template>
-        <div class="card bg-white shadow-md">
+        <div
+          class="card bg-white dark:bg-gray-800 shadow-md transition-colors duration-300"
+        >
           <figure>
             <img
               class="card-image"
@@ -62,7 +98,11 @@
               This is a sample product description. It is long and will be
               clamped after three lines using Tailwind’s line-clamp utility.
             </p>
-            <p class="line-through discount-price text-gray-500">10 000 000</p>
+            <p
+              class="line-through discount-price text-gray-500 dark:text-gray-400"
+            >
+              10 000 000
+            </p>
             <p class="rating text-yellow-500">⭐ 4.8</p>
             <div class="card-actions justify-end">
               <button class="btn btn-primary">Buy Now</button>
@@ -72,15 +112,22 @@
       </template>
     </main>
 
-
-    <footer class="bg-white shadow-inner mt-12">
+    <footer
+      class="bg-white dark:bg-gray-800 shadow-inner mt-12 transition-colors duration-300"
+    >
       <div
-        class="container mx-auto px-4 py-6 text-center text-sm text-gray-600"
+        class="container mx-auto px-4 py-6 text-center text-sm text-gray-600 dark:text-gray-400"
       >
         © 2025 MyShop. All rights reserved.
       </div>
     </footer>
 
+    <script>
+      const toggleBtn = document.getElementById("toggle-dark");
+      toggleBtn.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+      });
+    </script>
 
     <script type="module" src="./script.js"></script>
   </body>

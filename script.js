@@ -20,3 +20,17 @@ products.forEach((product) => {
 
   productList.appendChild(clone);
 });
+
+const toggleBtn = document.getElementById("toggle-dark");
+const themeIcon = document.getElementById("theme-icon");
+
+toggleBtn.addEventListener("click", () => {
+  const html = document.documentElement;
+  html.classList.toggle("dark");
+
+  if (html.classList.contains("dark")) {
+    themeIcon.classList.replace("fa-moon", "fa-sun");
+  } else {
+    themeIcon.classList.replace("fa-sun", "fa-moon");
+  }
+});
